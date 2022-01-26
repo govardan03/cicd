@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn help:effective-pom'
+                # sh 'mvn clean install'
             }
         }
         stage('Test') {
