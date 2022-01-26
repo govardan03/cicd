@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3-alpine'
+            image 'maven:latest'
             args '-v /root/.m2:/root/.m2'
         }
     }
@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn help:effective-pom'
-                
+                sh 'mvn clean install -Denforcer.skip=true'
             }
         }
         stage('Test') {
