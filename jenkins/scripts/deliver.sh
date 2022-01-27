@@ -23,5 +23,5 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-cp target/${NAME}-${VERSION}.jar /root/opt/app/${NAME}-${VERSION}.ja
+cp target/${NAME}-${VERSION}.jar /root/opt/app/${NAME}-${VERSION}.jar
 java -jar /root/opt/app/${NAME}-${VERSION}.jar --server.port=8083
